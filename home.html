@@ -1,0 +1,371 @@
+ 
+
+   
+<div >
+ <div class="container-fluid topdiv">
+    
+    <div class="topheader">
+      <div class="imgdiv"><img ng-src="images/i.png" width="20px"/></div>
+        What is <strong>Goodfilms</strong>? It’s a new kind of film site. 
+        <span class="linkspan">Read more </span>or <span class="linkspan">sign up!</span> 
+    </div>
+
+   <div ng-include="'nav.html'"></div>
+
+   <div class="col-1"><div class="textdiv">
+     <span>Find good films on <strong>Netflix</strong> in United States</span>
+     <h4 class="smalltxt">Want to get more from your Netflix subscription? These great films are all available for your streaming pleasure.</h4>
+     <button class="facebook like">
+      <div class="facebookpic"><img ng-src="images/facebook.png" class="imgpic"/></div>Like
+     </button>
+     <div class="comment">3</div> 
+     <p6 id="p6"></p6>
+     <button class="tweet"><img ng-src="images/tweet.png" width="15px"/>Tweet</button>
+     <p6 id="p6_1"></p6>
+     <div class="comment commenttweet">0</div> 
+   </div></div>
+
+   <div class="textdiv1">
+   <span >
+
+    Use <strong>Netflix</strong> in another country? Find good films in 
+    <a href="#" class="countrylink">Canada</a>,
+    <a href="#" class="countrylink"> United Kingdom</a>,
+    <a href="#" class="countrylink"> Germany</a>,
+    <a href="#" class="countrylink"> Brazil</a>,
+    <a href="#" class="countrylink"> Argentina</a>,
+    <a href="#" class="countrylink"> Ireland</a>,
+    <a href="#" class="countrylink"> Sweden</a>,
+    <a href="#" class="countrylink"> Netherlands</a>,
+    <a href="#" class="countrylink"> Switzerland</a>,
+    <a href="#" class="countrylink"> France</a>,
+    <a href="#" class="countrylink"> Austria</a>,
+    <a href="#" class="countrylink"> Denmark</a>,
+    <a href="#" class="countrylink"> Finland</a>,
+    <a href="#" class="countrylink"> Mexico</a>,
+    <a href="#" class="countrylink"> Australia</a>,
+    <a href="#" class="countrylink"> New Zealand</a>,
+    <a href="#" class="countrylink"> Chile</a>,
+    <a href="#" class="countrylink"> Costa Rica</a> or
+    <a href="#" class="countrylink"> in any country </a>
+
+   </span>
+   </div>
+
+   <div class="fixedcircle">?</div>
+
+   <div class="col-2">
+     <div class="col-2-1"><div class="textdiv2">
+       <span>
+         <strong>Netflix</strong> has plenty of great films to watch, but it's not the only kid on the block.
+       </span><br/> <br/>
+       <span>
+         Sign up to Goodfilms and find great stuff to watch, no matter what service you have access to. 
+       </span><br/> 
+    
+      <hr/>
+
+      <div class="circlediv">
+        <div class="circle">1</div>
+        <div id="signup">Sign up with 
+          <a href="#" id="facebook">Facebook</a> or 
+          <a href="#" id="facebook">Twitter </a>
+        </div><br/>
+        <div class="circle">2</div>
+        <div id="signup">Find interesting movies and add them to your queue.</div><br/>
+        <div class="circle">3</div>
+        <div id="signup">Experience complete streaming bliss. </div>
+      </div>
+ 
+      <hr/><br/>
+       <button class="fbsignup">
+        <p5></p5>Sign up with Facebook now
+       </button>
+       <button class="fbsignup fbtweet">
+        <p5></p5>Sign up with Twitter now
+       </button>
+
+     </div></div>
+
+
+     <div class="col-2-2">
+
+       <div>The Best Films on <strong>Netflix</strong> in United States</div>
+       <a href="#viewall" class="viewlink">
+        <button class="viewall" ><p5></p5>View all</button>
+       </a>
+       <div class="moviediv">
+        <div ng-repeat="x in images"> 
+       
+        <div class="movielist"> 
+
+          <div class="releasemovie"   showonhoverchild>
+           <span id="title">{{x.title}}</span>
+           <p id="year">{{x.year}}</p>
+           <button class="releasebutton">
+             <p3></p3>Rate this film
+           </button>
+           <button class="releasebutton add">
+            <p2></p2>Add to...
+           </button>
+          </div>
+ 
+          <a href="#movie/{{x.id}}">
+            <img class="posters" id="{{x.id}}" ng-src="{{x.src}}" data-original="{{x.src}}" width="150px" height="200px"  >
+          </a>
+
+          <div class="movierating">
+           <p1  id="p1_comment1"></p1>
+            <div class="number">{{x.comments}}</div>
+           
+           <p3  id="p3_star1"></p3>
+           <div class="starnumber">{{x.rating}}</div>
+          </div>
+
+        </div>
+       </div>
+       </div>
+
+     </div>
+
+   </div>
+
+
+   <div class="recentpic">
+
+    <div class="recentmovies"><div class="recentmoviediv">
+   
+     <div>
+       <div class="recentmovietxt">
+         Recent Releases on <strong>Netflix</strong> in United States
+       </div>
+        <a href="#viewall" class="viewlink">
+         <button class="viewall recent"><p5></p5> View all</button> 
+        </a> 
+     </div>
+
+     <div class="recentreleases">
+       <div ng-repeat="x in images"> 
+      
+        <div class="movielist type1">
+         
+          <div class="releasemovie" showonhoverchild>
+             <span id="title">{{x.title}}</span>
+             <p id="year">{{x.year}}</p>
+             <button class="releasebutton retype1">
+               <p3></p3>Rate this film
+             </button>
+             <button class="releasebutton add retype1">
+               <p2></p2>Add to...
+             </button>
+          </div>
+          <a href="#movie/{{x.id}}">
+             <img class="posters" ng-src="{{x.src}}" width="130px" height="200px"/>
+          </a>
+
+          <div class="movierating releaserating1">
+             <p1   class="p1_comment2"></p1>
+                <div class="number">{{x.comments}}</div>
+             </span>
+             <p3   class="p3_star2" ></p3>
+             <div class="starnumber">{{x.rating}}</div>
+          </div>
+
+        </div>
+      </div>
+     </div>
+
+    </div></div>
+
+
+
+    <div class="col-3">
+      <span class="states"> Genres on <strong>Netflix</strong> in United States </span>
+      <div class="cats">
+        <div ng-repeat="x in genres"> 
+          <span class="statelinks">{{x.name}}</span>
+        </div>
+        <a href="#viewall" class="viewlink">
+         <button class="viewall stateviewall"><p5></p5> View all</button> 
+        </a>
+      </div> 
+    </div>
+
+   </div>
+
+ 
+
+
+
+  <div><div class="populardiv">
+          <span id="popularheading">
+            Popular Films on <strong>Netflix</strong>
+          </span>
+           <a href="#viewall" class="viewlink">
+            <button class="viewall  popularviewall"><p5></p5> View all</button> 
+           </a>
+        </div>
+
+        <div class="popularmovies">
+        <div ng-repeat="x in popularmovies">
+
+        <div class="movielist type2">
+          <div class="releasemovie" showonhoverchild >
+            <span id="title">{{x.title}}</span>
+            <p id="year">{{x.year}}</p>
+            <button class="releasebutton retype2">
+              <p3></p3>Rate this film
+            </button>
+            <button class="releasebutton add retype2">
+              <p2></p2>Add to...
+            </button>
+          </div>
+          <a href="#movie/{{x.id}}">
+            <img class="posters" ng-src="{{x.src}}" width="145px" height="200px"/>
+          </a>
+          <div class="movierating popularrate">
+            <p1 class="p1_comment3"></p1>
+              <div class="number">{{x.comments}}</div>
+            </span>
+            <p3 class="p3_star3" ></p3>
+            <div class="starnumber">{{x.rating}}</div>
+          </div>
+        </div>
+        
+        </div>
+        </div>
+  </div>
+
+
+
+
+
+  <div class="newmoviediv">
+    <span id="newheading">
+        <p>
+          <strong>Oh, hello, new best friend!</strong><br/>
+           Join <strong>Goodfilms</strong> to keep up to date with what your friends are watching across all services
+        </p> 
+    </span>
+    
+    <div class="newmovies">
+      <div ng-repeat="x in popularmovies"> 
+        
+        <div class="movielist type2">
+          <a href="#">
+            <img class="posters goodfilm" ng-src="{{x.src}}" width="145px" height="200px"/>
+          </a>
+          <div class="movierating popularrate">
+            <p1   class="p1_comment3"></p1>
+              <div class="number">{{x.comments}}</div>
+            </span>
+            <p3 class="p3_star3" ></p3>
+              <div class="worststarnumber">{{x.rating}}</div>
+            
+          </div>
+        </div>
+      </div> 
+ 
+      <div class="profile">
+        <span><img src="images/profile.gif" width="20px"/></span>
+        <span class="profilename">Anaalise</span><br/>
+        <div class="pro_div">
+          <div class="profilestars"><img ng-src="images/stars.png"></div>
+          <div class="profilestars profilerates" ><img src="images/rateing.png"></div>
+        </div>
+      </div>
+
+      <div class="profile" id="profile">
+        <span><img src="images/profile.gif" width="20px"/></span>
+        <span class="profilename">Bob</span><br/>
+        <span id="profilereview">added it</span>
+      </div>
+  
+      <div class="profile" id="profile1">
+        <span><img src="images/profile.gif" width="20px"/></span>
+        <span class="profilename">James</span><br/>
+        <span id="profilereview">added it</span>
+      </div>
+  
+      <div class="profile" id="profile2">
+        <span><img src="images/profile.gif" width="20px"/></span>
+        <span class="profilename">Nohaan</span><br/>
+        <span id="profilereview">added it</span>
+      </div>
+  
+      <div class="profile" id="profile3">
+        <span><img src="images/profile.gif" width="20px"/></span>
+        <span class="profilename">David</span><br/>
+        <span id="profilereview">added it</span>
+      </div>
+ 
+      <div class="profile" id="profile4">
+        <span><img src="images/profile.gif" width="20px"/></span>
+        <span class="profilename">Frank</span><br/>
+        <span id="profilereview">added it</span>
+      </div>
+    </div>
+    <button class="friendbutton">
+      <img ng-src="images/usergroup.png" width="20px"/>   
+        Join GoodFilms and watch <strong>great movies </strong>
+    </button>
+  </div>
+
+
+
+  <div class="worstfilms">
+    <span id="worstheading">
+      The Worst Films on <strong>Netflix</strong>in United States 
+    </span>
+     <a href="#viewall" class="viewlink">
+      <button class="viewall worstview"><p5></p5> View all</button> 
+    </a>
+
+    <div ng-repeat="x in popularmovies"> 
+
+      <div class="movielist type2 worstmovie">
+        
+        <div class="releasemovie" showonhoverchild>
+          <span id="title">{{x.title}}</span>
+          <p id="year">{{x.year}}</p>
+          <button class="releasebutton worsttype1">
+            <p3></p3>Rate this film
+          </button>
+          <button class="releasebutton worsttype2 ">
+            <p2></p2>Add to...
+          </button>
+        </div>
+
+        <a href="#movie/{{x.id}}">
+          <img class="posters  " ng-src="{{x.src}}" width="145px" height="212px"/>
+        </a>
+        
+        <div class="movierating w_rating">
+          <p1 class="p1_comment3"></p1>
+            <div class="number">{{x.comments}}</div>
+          </span>
+          <p3 class="p3_star3" ></p3>
+            <div class="worststarnumber">{{x.rating}}</div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer >
+      <a href="#">Help & Frequently Asked Questions</a>
+      <a href="#"> Blog</a> © Gyde Inc. 
+    </footer> 
+  
+ </div>  
+</div>
+
+                  
+               
+                
+                    
+
+ 
+
+
+   

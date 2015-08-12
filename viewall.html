@@ -1,0 +1,46 @@
+<div ng-include="'nav.html'"></div>
+
+
+    <div><h1 class="viewhead">The Best Movies on Netflix in United States, Right now.</h1>
+          <a href="#home"><button class="viewall view-button">See all Netflix films</button></a>
+    </div>
+     <div class="viewalldiv" infinite-scroll='loadMore()' >
+        <div ng-repeat="x in movies" > 
+       
+        <div class="movielist viewlist"> 
+
+          <div class="viewallmovie"   showonhoverchild>
+           <span class="viewtitle" >{{x.title}}</span>
+           <p id="year" class="viewyear">{{x.year}}</p>
+           <button class="releasebutton viewadd">
+             <p3></p3>Rate this film
+           </button>
+           <button class="releasebutton add viewadd">
+            <p2></p2>Add to...
+           </button>
+          </div>
+ 
+          <a href="#movie/{{x.id}}">
+            <img class="posters" id="{{x.id}}" ng-src="{{x.src}}" data-original="{{x.src}}" width="150px" height="200px">
+          </a>
+
+          <div class="movierating">
+           <p1  class="viewcomment"></p1>
+            <div class="number view-num">{{x.comments}}</div>
+           
+           <p3  class="view-star"></p3>
+           <div class="view-snum">{{x.rating}}</div>
+          </div>
+
+        </div>
+       </div>
+       </div>
+        
+
+
+
+    
+ 
+
+     
+     

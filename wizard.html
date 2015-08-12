@@ -1,0 +1,100 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="modal.dismiss()" aria-hidden="true">&times;</button>
+	 
+</div>
+<div class="modal-body">
+	<div>
+		 <div ng-repeat="x in movies">  
+            <span ng-show = "{{Id}} == {{x.id}} ">
+                <div class="modal-title1">{{x.title}}</div> 
+            </span>  
+        </div>
+        <div>
+            <img ng-src="images/{{Id}}.jpg" width="230px" height="330px" style="margin-top: 18px;margin-left: -28px;" />
+        </div>
+
+
+		<div ng-switch="modal.getCurrentStep()" class="slide-frame">
+			<div ng-switch-when="one" class="wave">
+				<fieldset  >
+				     
+					<div class="form-group">
+						 <div>
+                            <div class="modal-rateit">
+                               Rate it now
+                            </div>
+                            <div>
+                              <span class="modal-quality">Quality</span>
+                              <div  ng-model="modal.wizard.rate">
+                              <div ng-model="rating" ng-click="saverating(rating)">
+                              <div ng-init="rating = star.rating +1 "></div>
+                              <div class="star-rating rating-align" star-rating rating-value="  rating" data-max="5" on-rating-selected="rateFunction(rating)">
+                              </div>
+                              </div>
+                              </div>
+                               <br/><br/> 
+                              <span class="modal-quality">Rewatchability</span>
+                              <img ng-src="images/modalsmile.png" style="margin-left: 112px;margin-top: 21px;" />                            
+                              <img id="s1" ng-src="images/smile1.png" width="33px" height="30px" class="smile smile1" ng-click="smilerating('1')" />
+                               <img id="s2" ng-src="images/smile2.png" width="33px" height="30px" class="smile smile2" ng-click="smilerating('2')"/>
+                               <img id="s3" ng-src="images/smile3.png" width="33px" height="30px" class="smile smile3" ng-click="smilerating('3')"/>
+                               <img id="s4"ng-src="images/smile4.png" width="33px" height="30px" class="smile smile4" ng-click="smilerating('4')"/>
+                               <img id="s5" ng-src="images/smile5.png" width="33px" height="30px" class="smile smile5" ng-click="smilerating('5')"/>
+                            </div>
+
+                            <div>
+                                <button class="modal-back" ng-click="modal.dismiss()" data-dismiss="modal">
+                                  No,thanks.Take me back.
+                                </button>
+                            </div>  
+
+                            
+                          </div> 					
+					</div>
+					
+				</fieldset>
+			</div>
+			<div ng-switch-when="two" class="wave">
+				<fieldset ng-submit="submitForm()" autosave="runAutoSave">
+				    
+					<div class="form-group" >
+						<div class="modal-rateit modal-comment">
+                            Write your short review here. Nothing too in-depth, just something your friends will understand. 
+                        </div> 
+                        <textarea class="modal-txtarea" id="tarea"  ng-model="newValue" ></textarea>
+                        <button class="modal-review" ng-click="savereview(newValue)">{{test}}</button>
+						
+                            <div>
+                                <button class="modal-back" ng-click="modal.dismiss()" data-dismiss="modal">
+                                  No,thanks.Take me back.
+                                </button>
+                            </div>   
+					</div>
+				   
+				</fieldset>
+			</div>
+			<div ng-switch-when="three" class="wave">
+				<fieldset>
+					<div class="control-group">
+					    <div class="modal-rateit modal-sharetxt">
+                           Share your review with your friends   
+                        </div> 	 
+                        <button class="modal-facebook">Facebook</button>
+						<button class="modal-twitter">Twitter</button> <br/><br/><br/>
+					    <div>
+                            <button class="modal-back" ng-click="modal.dismiss()" data-dismiss="modal">
+                                  No,thanks.Take me back.
+                            </button>
+                        </div>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</div>
+ 
+	<a class="btn btn-default" ng-click="modal.handlePrevious()" ng-show="!modal.isFirstStep()"><p13></p13></a>
+
+	<div class="modal-arrow" ng-click="modal.handleNext()" ng-show="!modal.isLastStep()"><p12></p12></div>
+ 
+

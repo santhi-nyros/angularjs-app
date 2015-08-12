@@ -1,0 +1,370 @@
+  
+
+
+
+  <div ng-include="'nav.html'"></div>
+    <div class="movie">
+      <img ng-src = "images/{{Id}}.jpg" width="220px" height="330px" />
+     
+      <div class="about">
+        <p1 class="p1" id="p1"></p1>
+      
+        <div ng-repeat="x in movies">  
+          <span ng-show = "{{Id}} == {{x.id}} ">
+            <span class="white" id="comment"> {{x.comments}} </span>  
+          </span>  
+        </div> 
+
+        <p3 class="p3" id="p3"></p3>
+       
+        <div ng-repeat="x in movies">  
+          <span ng-show = "{{Id}} == {{x.id}} ">
+            <span id="r1" class="white s">{{x.rating}}</span>  
+          </span>  
+        </div>
+      
+        <h6 class="icon2"> <img src="images/queue.png" width="16px"/></h6>
+      
+        <div ng-repeat="x in movies">  
+          <span ng-show = "{{Id}} == {{x.id}} ">
+            <span class="white s1"> {{x.queue}} </span>  
+          </span>  
+        </div>
+      </div>
+      
+  <accordion>
+    <accordion-group id="1" style="background-color:transparent;border:none;" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+      <accordion-heading id="s">
+        <div ng-click="addClass1()">     
+        
+           <span  style="color:white;">iTunes</span>
+           <h4 class="small">Rental</h4> 
+             <p2 class="acc_plus" id="plus1"></p2>
+        </div>
+      </accordion-heading>
+    
+      <ul>
+          <li class="acc_list acc_h1">
+            <span>Rental</span><span style="color:gray; margin-left:10px;">HD</span><p9 id="p9"></p9>
+            <br/><br/>
+            <span class="acc_small">Rent now in HD for $120 on iTunes India.</span>
+             
+          </li>
+
+          <li class="acc_list acc_h1">
+            <span>Rental</span><span style="color:gray; margin-left:10px;">SD</span><p9 id="p9"></p9>
+            <br/><br/>
+            <span class="acc_small">Rent now in SD for $80 on iTunes India.</span>
+             
+          </li>
+      </ul>
+    </accordion-group>
+
+    <accordion-group style="background-color:transparent;border:none;"  >
+       <accordion-heading >
+           <div ng-click="addClass2()" class="plus1"> 
+           <span style="color:white;" >Amazon Instant Video</span>
+           <h4 class="small" >Rental and Purchase</h4> 
+            <p2 class="acc_plus" id="plus2"></p2>
+          </div>
+        </accordion-heading>
+        <ul ng-repeat="x in countries">
+          <li class="acc_list">
+            <span>Rental</span><span style="color:gray; margin-left:10px;">HD</span><p9 id="p9_1"></p9>
+            <br/>
+            <span class="acc_small">Avaliable in {{x.country}}</span>
+             
+          </li>
+        </ul>
+    </accordion-group>
+
+    <accordion-group style="background-color:transparent;border:none;"  >
+        <accordion-heading >
+         <div ng-click="addClass3()" > 
+           <span style="color:white;" >Fetch TV</span>
+           <h4 class="small" >Rental</h4> 
+            <p2 class="acc_plus" id="plus3"></p2>
+         </div>
+        </accordion-heading>
+          <ul>
+          <li class="acc_list">
+            <span>Rental</span> <p9 id="p9_1" style="margin-left: 144px;"></p9>
+            <br/>
+            <span class="acc_small">Avaliable in Australia</span>
+            
+          </li>
+
+          
+        </ul>
+    </accordion-group>
+ 
+    <accordion-group style="background-color:transparent;border:none;" >
+        <accordion-heading >
+          <div ng-click="addClass4()"> 
+           <span style="color:white;" >Netflix</span>
+           <h4 class="small"  >Subscription</h4> 
+            <p2 class="acc_plus" id="plus4"></p2>
+          </div>  
+        </accordion-heading>
+          <ul ng-repeat="x in countries">
+          <li class="acc_list">
+            <span>Subscription</span> <p9 id="p9_1"></p9>
+            <br/>
+            <span class="acc_small">Avaliable in {{x.country}}</span>
+            
+          </li>
+          </ul>
+    </accordion-group>
+ 
+    <accordion-group style="background-color:transparent;border:none;"  >
+        <accordion-heading >
+          <div ng-click="addClass5()"> 
+           <span style="color:white;" >Quickflix</span>
+           <h4 class="small" >Rental</h4> 
+            <p2 class="acc_plus" id="plus5"></p2>
+          </div>
+        </accordion-heading>
+          <ul>
+          <li class="acc_list">
+            <span>Rental</span><p9 id="p9_1" style="margin-left: 144px;"></p9>
+            <br/>
+            <span class="acc_small">Avaliable in Australia</span>
+            
+          </li>
+
+          <li class="acc_list">
+            <span>Rental</span><p9 id="p9_1" style="margin-left: 144px;"></p9> 
+            <br/>
+            <span class="acc_small">Avaliable in New Zealand</span>
+             
+          </li>
+        </ul>
+    </accordion-group>
+    <div  id="queue"class="deletequeue topmargin4 display" ng-click="hidequeue()">
+         
+        <span class="txt" >Delete Rating/Review</span>
+    </div>
+    
+    <div ng-click="hide()">
+    <div class="otherlinks topmargin4" ng-click="open()" >
+        <p4></p4>
+        <span class="txt">Rate this film</span>
+    </div>
+    </div>
+      
+      <div ng-click="hide()">
+      <div class="otherlinks topmargin5" ng-click="open()" >
+        <p class="queueimg"><img src="images/queue.png" /></p>
+        <span class="txt1">Add to queue</span>
+      </div></div>
+   </accordion>
+         
+             
+      <div ng-repeat="x in movies">  
+        <span ng-show = "{{Id}} == {{x.id}} ">
+        <h2> {{x.title}} </h2>  
+        </span>  
+      </div>
+
+
+      <div ng-repeat="x in movies">  
+        <span ng-show = "{{Id}} == {{x.id}} ">
+        <year>{{x.year}}</year>
+        </span>  
+      </div>
+      
+      <div> 
+        <span><img src="images/chair.png"/></span>
+        <span><img id="users" src="images/users.png"/></span>
+        <hr/>
+
+        <span>
+          <img src="images/starc.png" style="margin-top: 217px;"/>
+        </span>
+        <div ng-click="open()">
+        <div id="rate2" class="display">
+        <div ng-init="rating = star.rating +1 "></div>
+            <div class="star-rating rating-align movie-srating" star-rating rating-value="newrating()" data-max="5" on-rating-selected="rateFunction(rating)">
+            </div>
+        <img ng-src="images/modalsmile.png" width="150px" style="margin-left: 487px;margin-top: 242px;" />
+        <div>
+          <img class="s1" ng-src="images/smile1.png" width="33px" height="30px" id="smile1"/>
+          <img class="s2" ng-src="images/smile2.png" width="33px" height="30px" id="smile2"/>
+          <img class="s3" ng-src="images/smile3.png" width="33px" height="30px" id="smile3"/>
+          <img class="s4" ng-src="images/smile4.png" width="33px" height="30px" id="smile4" />
+          <img class="s5" ng-src="images/smile5.png" width="33px" height="30px" id="smile5"/>
+         </div>
+        </div>
+        <div class="rating1" id="rate1" ng-click="hide()" > {{newrating()}}</div>
+       </div>
+        <span><img src="images/comment.png" style="margin-top: 223px; margin-left: 700px;"/></span>
+        <div ng-click="hide()"><div class="review1"  ng-click="open()">{{comment()}}  </div></div>
+      </div>
+        
+       
+  </div>
+    
+     <smile></smile>
+    <div id="tabs" class="tabdiv">
+        <ul class="nav nav-tabs">
+            <li class="tabheading" ng-repeat="tab in tabs" 
+                ng-class="{active:isActiveTab(tab.url)}" 
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+   </div>
+
+  <script type="text/ng-template" id="one.tpl.html">
+      <div ng-repeat="x in movies"> 
+          <span ng-show = "{{Id}} == {{x.id}} ">
+            <div class="reviews">
+              
+              <div class="reviewdiv">
+                <div class="profile">
+                  <img ng-src="images/user.jpeg" width="30px" height="30px" />
+                </div>
+                <div class="username">Bob Blaschuk</div>
+                <div class="reviewtxt">{{x.review}}</div>
+              </div>
+
+              <div class="like">
+                <p8></p8>
+                  {{likeCount}}
+                  <div  >
+                    <input type="button" id="unlike" value="{{liked}}" width="100px" height="20px" class="likebutton" ng-click="likeClick()"/>
+                  </div>
+              </div>
+
+              <div class="stardiv">
+                <div id="bstar">
+                  <div id="star" style="width:70%"></div> 
+                </div>
+                <div id="bsmile">
+                  <div id="smile" style="width:80%"></div> 
+                </div>
+              </div>
+            </div>
+          </span> 
+        </div>    
+  </script>
+
+      <script type="text/ng-template" id="two.tpl.html">
+        
+         
+         <div ng-repeat="x in stories"> 
+          <span ng-show = "{{Id}} == {{x.id}} ">
+           <p class="syn_div">{{x.story}}</p>
+          </span>
+          </div>
+          
+
+         <p class="syn_txt">Read more on 
+         <img ng-src="images/boxarrow.png"style="margin-left: 10px;margin-top: -8px;"/>
+         <a class="syn-link"> IMDB</a>
+         <img ng-src="images/boxarrow.png"style="margin-left: 10px;margin-top: -8px;"/>
+         <a class="syn-link">Wikipedia </a>
+        
+      </script>
+
+    <div class="headings">         
+      <a>RATING</a>          
+    </div>
+
+    <div class="graph">
+      <img src="images/graph.png" style="position: absolute; margin-top: -171px; margin-left: 4px;"/>
+      <img src="images/black.png" width="280px" height="280px"  class="positions" />
+    </div>
+   
+     
+
+    
+    <div class="similarmovies">
+      <span class="related">Related  </span>
+      <div ng-repeat="x in popularmovies"> 
+        <div class="movielist">
+          <div class="releasemovie type4" showonhoverchild >
+            <span id="title1">{{x.title}}</span>
+            <p id="year1">{{x.year}}</p>
+            <button class="releasebutton similar1" >
+              <p3></p3>Rate this film
+            </button>
+            <button class="releasebutton similar2 ">
+              <p2></p2>Add to...
+            </button>
+          </div>
+          <a href="#">
+            <img class="posters" ng-src="{{x.src}}" width="130px" height="200px"/>
+          </a>
+
+          <div class="movierating s_rating">
+            <p1 class="s_comment"></p1>
+              <div class="similar_no">{{x.comments}}</div>
+             <p3 class="s_star" ></p3>
+              <div style="margin-left: 65px;"  class="similar_no">{{x.rating}}</div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+     
+   
+   <div ng-init="rating = smile.rating +1 "></div>
+            <div class="smile-rating smile-align" smile-rating rating-value="newrating()" data-max="5" on-rating-selected="rateFunction(rating)">
+            </div>
+
+ 
+    <div class="similarmovies relates">
+      <span class="related">Similar  </span>
+      <div ng-repeat="x in popularmovies"> 
+      
+        <div class="movielist">
+          
+          <div class="releasemovie type4" showonhoverchild>
+            <span id="title1">{{x.title}}</span>
+            <p id="year1">{{x.year}}</p>
+            <button class="releasebutton similar1">
+              <p3></p3>Rate this film
+            </button>
+            <button class="releasebutton similar2 ">
+              <p2></p2>Add to...
+            </button>
+          </div>
+
+          <a href="#">
+            <img class="posters" ng-src="{{x.src}}" width="130px" height="200px"/>
+          </a>
+
+          <div class="movierating s_rating">
+            <p1 class="s_comment"></p1>
+              <div class="similar_no">{{x.comments}}</div>
+            <p3 class="s_star" ></p3>
+              <div style="margin-left: 65px;" class="similar_no">{{x.rating}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer >
+      <a href="#">Help & Frequently Asked Questions</a>
+      <a href="#"> Blog</a> © Gyde Inc. 
+    </footer>
+  
+     
+
+     
+
+
+    
+
+   
+     
+    
+
+ 
+
+
+
